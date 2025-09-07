@@ -16,7 +16,14 @@ module.exports = [
       },
     },
   },
-  'strapi::cors',
+  {
+    name: 'strapi::cors',
+    config: {
+      enabled: true,
+      headers: '*',
+      origin: ['https://sivals8.github.io'],
+    },
+  },
   'strapi::poweredBy',
   'strapi::query',
   'strapi::body',
