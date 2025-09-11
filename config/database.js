@@ -4,7 +4,7 @@ module.exports = ({ env }) => ({
     connection:
       env('DATABASE_CLIENT') === 'postgres'
         ? {
-            connectionString: env('DATABASE_URL'),
+            connectionString: env('postgresql://postgres:[Soggyblossomed28]@db.ukvdirlpfbpjujchqjwz.supabase.co:5432/postgres'),
             ssl: {
               rejectUnauthorized: false, // required for Render / Supabase
             },
