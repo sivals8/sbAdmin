@@ -4,19 +4,14 @@ module.exports = ({ env }) => ({
     connection:
       env('DATABASE_CLIENT') === 'postgres'
         ? {
-            connectionString: env('postgresql://postgres:[Soggyblossomed28]@db.ukvdirlpfbpjujchqjwz.supabase.co:5432/postgres'),
-            ssl: {
-              rejectUnauthorized: false, // required for Render / Supabase
-            },
+            connectionString: env('DATABASE_URL'),
+            ssl: { rejectUnauthorized: false },
           }
         : {
-            filename: env('DATABASE_FILENAME', '.tmp/data.db'),
+            filename: env('DATABASE_FILENAME', '.tmp/data.db'), //holds data locally if it defaults to sqlite
           },
     useNullAsDefault: env('DATABASE_CLIENT') !== 'postgres',
-    pool: {
-      min: 0,
-      max: 10,
-    },
+    pool: { min: 0, max: 10 },
     acquireConnectionTimeout: 60000,
   },
 });
