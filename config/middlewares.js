@@ -9,8 +9,21 @@ module.exports = [
         useDefaults: true,
         directives: {
           'connect-src': ["'self'", 'https:'],
-          'img-src': ["'self'", 'data:', 'blob:', 'market-assets.strapi.io', 'sbadmin-portal.onrender.com'],
-          'media-src': ["'self'", 'data:', 'blob:', 'market-assets.strapi.io', 'sbadmin-portal.onrender.com'],
+          'img-src': [
+            "'self'",
+            'data:',
+            'blob:',
+            'market-assets.strapi.io',
+            'https://sbadmin-portal.onrender.com', //api domain
+            'https://sivals8.github.io',           
+          ],
+          'media-src': [
+            "'self'",
+            'data:',
+            'blob:',
+            'market-assets.strapi.io',
+            'https://sbadmin-portal.onrender.com',
+          ],
           upgradeInsecureRequests: null,
         },
       },
